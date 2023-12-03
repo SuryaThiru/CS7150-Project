@@ -281,7 +281,7 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
 <h5>Summary</h5>
 
 <p class="text-justify">
-  Rome uses causal analysis to identify MLP’s in the early layer of subject tokens that have a major effect on factual associations. To test this, the paper performs rank one model edits to the weights of the MLP to create new factual associations to subject tokens. 
+  The paper "Mass-Editing Memory in a Transformer (MEMIT)" proposes a novel method for updating large language models with new memories, scaling up to thousands of edits. MEMIT directly manipulates layer parameters of transformers, offering substantial improvements over previous methods in terms of specificity, generalization, and fluency.
 </p>
 
 <h5>Strengths</h5>
@@ -289,10 +289,10 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
 <p class="text-justify">
   <ul>
     <li>
-      Novel technique that helps us understand the inner workings of transformers better and possibly could result in a future paradigm shift.
+      Scalability: MEMIT successfully scales to much larger sets of edits compared to existing approaches, handling thousands of memory updates effectively.
     </li>
     <li>
-      Clear visuals and technical explanations for causal tracing and ROME as well as evaluations such as specificity to measure if these edits effect other facts.
+      Performance on Various Metrics: Demonstrates excellent performance across multiple evaluation metrics, including efficacy, paraphrase, specificity, and fluency, outperforming baseline methods significantly.
     </li>
   </ul>
 </p>
@@ -302,7 +302,10 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
 <p class="text-justify">
   <ul>
     <li>
-      Performs single edits at a time and does not scale well after thousands of edits.
+      Complexity of Implementation: The methodology and algorithms involved are complex, which might pose challenges in practical applications or adaptations.
+    </li>
+    <li>
+      Limited Scope of Knowledge Representation: The method focuses predominantly on directional (subject-relation-object) relations, potentially limiting its applicability for more complex knowledge representations.
     </li>
   </ul>
 </p>
@@ -312,7 +315,11 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
 <p class="text-justify">
   <ul>
     <li>
-      The focus of the paper was to make single edits using MLP’s. However, what if more experimental design went into understanding the effect of attention layers?
+      How does MEMIT handle conflicting or contradictory memory edits? 
+      Is there potential for further optimization in the execution time of MEMIT, particularly in large-scale applications?
+    </li>
+    <li>
+      Could MEMIT be adapted for other types of language models beyond transformers?
     </li>
   </ul>
 </p>
@@ -320,7 +327,7 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
 <h5>Limitations</h5>
 
 <p class="text-justify">
-  The major limitation to ROME as mentioned above is that it doesn’t scale well when making thousands of edits. Otherwise, the paper was structured well.
+  A notable limitation is its focus on directional relations, which may not cover comprehensive knowledge types like spatial/temporal reasoning or procedural knowledge.
 </p>
 
 <h5>Scores</h5>
