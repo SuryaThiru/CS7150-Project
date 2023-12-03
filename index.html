@@ -274,6 +274,84 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
   </table>
 </p>
 
+<h2>Peer-Review</h2>
+
+<h3>Karan Shah</h3>
+
+<h5>Summary</h5>
+
+<p class="text-justify">
+  Rome uses causal analysis to identify MLP’s in the early layer of subject tokens that have a major effect on factual associations. To test this, the paper performs rank one model edits to the weights of the MLP to create new factual associations to subject tokens. 
+</p>
+
+<h5>Strengths</h5>
+
+<p class="text-justify">
+  <ul>
+    <li>
+      Novel technique that helps us understand the inner workings of transformers better and possibly could result in a future paradigm shift.
+    </li>
+    <li>
+      Clear visuals and technical explanations for causal tracing and ROME as well as evaluations such as specificity to measure if these edits effect other facts.
+    </li>
+  </ul>
+</p>
+
+<h5>Weaknesses</h5>
+
+<p class="text-justify">
+  <ul>
+    <li>
+      Performs single edits at a time and does not scale well after thousands of edits.
+    </li>
+  </ul>
+</p>
+
+<h5>Questions</h5>
+
+<p class="text-justify">
+  <ul>
+    <li>
+      The focus of the paper was to make single edits using MLP’s. However, what if more experimental design went into understanding the effect of attention layers?
+    </li>
+  </ul>
+</p>
+
+<h5>Limitations</h5>
+
+<p class="text-justify">
+  The major limitation to ROME as mentioned above is that it doesn’t scale well when making thousands of edits. Otherwise, the paper was structured well.
+</p>
+
+<h5>Scores</h5>
+
+<p>
+  <table class="table-sm">
+    <tbody>
+      <tr>
+        <th>Soudness</th>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th>Presentation</th>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th>Contribution</th>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th>Overall</th>
+        <td>8</td>
+      </tr>
+      <tr>
+        <th>Confidence</th>
+        <td>4</td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
 <h3>References</h3>
 
 <p><a name="petroni">[1]</a> Fabio Petroni, Tim Rocktäschel, Sebastian Riedel, Patrick Lewis, Anton Bakhtin, Yuxiang Wu, and Alexander Miller.
