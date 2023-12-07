@@ -201,6 +201,56 @@ Based on this analysis and measuring the average indirect effect of MLP’s (see
   </div>
 </div>
 
+<h3>Demo</h3>
+
+<div class="row">
+  <div class="col-md-7">
+      <p class="text-justify">
+        We run the <a href="https://github.com/kmeng01/memit">demo code</a> interface provided by the authors of MEMIT to experiment with the editing approach
+        on the GPT-J 6B model. We run the tests on a A100 GPU.
+        The approach performs quite well. In the example shown in the figure, we perform the following edit provided in the example:      
+      </p>  
+  </div>
+
+  <div class="col-md-5">
+    <img src="images/MEMIT/steve edit request.png" width="100%" class="img-fluid">
+  </div>
+</div>
+
+<p class="text-justify">
+  The resulting edit is quite accurate and generalizes across various forms of prompts that query for the same information.
+  For example, the figures below show prompts that are different from the original edit prompt structure.
+  We see that the generated text is coherent and adheres to the knowledge edit we made to the model. 
+  However, as seen in the 3rd figure, this sometimes enables the LLM to produce fictitious information.
+
+  <div class="row">
+    <div class="col-md-4 pr-1">
+        <img src="images/MEMIT/steve to microsoft.png" width="100%">
+    </div>
+  
+    <div class="col-md-4 px-1">
+      <img src="images/MEMIT/steve famous.png" width="100%">
+    </div>
+
+    <div class="col-md-4 pl-1">
+      <img src="images/MEMIT/steve jobs tech.png" width="100%">
+    </div>
+  </div>
+
+  However, the edits are not symmetric. i.e, when the subject and object is flipped in the original query, 
+  the generator does not reflect the performed edit (see figure below). A separate edit has to be requested to make this change.
+
+  <img src="images/MEMIT/microsoft to steve.png" width="70%" class="mx-auto d-block py-2">
+</p>
+
+<p class="text-justify">
+  We also noticed that the edits are less succesful when the requested edit is conceptually close to the original fact.
+  For example, for the edit "Jaguar is known for a luxury watch brand", the generation is sensitive to the prompt used and only works 
+  with the exact same prompt used while performing the edit as shown below.
+
+  <img src="images/MEMIT/jaguar edited incorrect.png" width="70%" class="mx-auto d-block py-2">
+</p>
+
 <h2>Social Impact</h2>
 
 <h3>Positive Impact</h3>
